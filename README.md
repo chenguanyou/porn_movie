@@ -1,5 +1,5 @@
 # Django_fc_hs
-小爬虫应用，使用django来展示，和播放数据！
+Python应用，使用django来展示，和播放数据！
 
 环境Python3,Django1.11.7
 
