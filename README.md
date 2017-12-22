@@ -23,13 +23,21 @@ huangsedb.sql --> sql数据
 
 配置如下：
 DATABASES = {
+
     'default': {
+    
         'ENGINE': 'django.db.backends.mysql',
+        
         'NAME': '数据库名称',
+        
         'USER':'root',
+        
         'PASSWORD':'admin123456',
+        
         'HOST':'127.0.0.1',
+        
         'PORT':'3306'
+        
     }
 }
 
