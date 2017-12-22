@@ -21,24 +21,14 @@ huangsedb.sql --> sql数据
 
 把/huang_se/huang_se/settings.py里面的这个数据库信息改成你自己的，并且在数据库里面创建好这个数据库！
 
-配置如下：
+数据库配置如下：
 DATABASES = {
-
     'default': {
-    
-        'ENGINE': 'django.db.backends.mysql',
-        
-        'NAME': '数据库名称',
-        
-        'USER':'root',
-        
-        'PASSWORD':'admin123456',
-        
-        'HOST':'127.0.0.1',
-        
-        'PORT':'3306'
-        
-    }
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': '数据库名称',
+            'USER':'数据库用户名',
+            'PASSWORD':'密码',
+            'HOST':'地址',
+            'PORT':'端口'
+     }
 }
-
-
