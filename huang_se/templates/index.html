@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{TITLES}}</title>
+	<link href="{% static 'css2/bootstrap.min.css' %}"  type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css2/htmleaf-demo.css' %}">
+	<link href="{% static 'css2/jumbotron-narrow.css' %}" rel="stylesheet">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+{% include 'header.html' %}
+	<div class="htmleaf-container">
+		<div class="container">
+
+    <div class="jumbotron">
+      <form action="{% url 'index' %}" method="post">{% csrf_token %}
+        <div class="form-group form-group-search">
+          <h1><label for="exampleInputEmail1">发车吧</label></h1>
+          <input type="search" class="form-control" id="search" name="title" placeholder="试试巨乳？国产？东北？记得回车!">
+        </div>
+          <p>搜索和"<h style="color: #b92c28 ;">{{sostr}}</h>"相关的有<h style="color: #c12e2a">{{shuliang}}</h>辆车!</p>
+      </form>
+    </div>
+
+    <div class="row marketing">
+      <div class="col-lg-12" id="result-list">
+        {% for huangse in hstitle %}
+        <a id="{% url 'tages' %}?id={{huangse.id}}" class="urltest" href="{% url 'tages' %}?id={{huangse.id}}">{{huangse.titles|cut:"-34pao视频免费在线视"|slice:"50"}} </a><br>
+          {% endfor %}
+      </div>
+
+    </div>
+    <!-- 分页 -->
+        {% if hstitle.has_previous %}
+            <a href="{% url 'index' %}?p={{ hstitle.previous_page_number }}">上一页</a>
+            {% else %}
+            <a href="#">上一页</a>
+        {% endif %}
+
+        {% if hstitle.has_next %}
+            <a href="{% url 'index' %}?p={{ hstitle.next_page_number }}">下一页</a>
+        {% endif %}
+        <span>
+            <p style="color: #FFFFFF;">{{ hstitle.number }} / {{ hstitle.paginator.num_pages }}页 资源数量：{{counts}}+</p>
+        </span>
+     <!-- 分页 -->
+  </div>
+	</div>
+</body>
+</html>

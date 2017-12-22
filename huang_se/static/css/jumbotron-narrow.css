@@ -1,0 +1,134 @@
+/* Space out content a bit */
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.header, .marketing, .footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting marketing content */
+
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header, .marketing, .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.form-group-search{
+  position: relative;
+}
+
+.search-result {
+  width: 360px;
+  border: 1px solid #A4A4A4;
+  position: absolute;
+  top: 117px;
+  left: 0px;
+  background: #fff;
+  z-index: 1;
+}
+.search-result h4 {
+  color: #fff;
+  background: #5cb85c;
+  padding: 4px 10px;
+  margin: 0;
+  font-size: 14px;
+}
+.search-result ul{
+  padding: 0px;
+  list-style: none;
+}
+.search-result li {
+  border-bottom: 1px solid #A4A4A4;
+}
+.search-result li:last-of-type {
+  border: 0 none;
+}
+.search-result li a {
+  display: block;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #979797;
+}
+mark{
+  color: #337ab7;
+  font-size: 16px;
+  font-weight: bold;
+}
+.search-result li a:hover {
+  background: #ccc;
+  color: #fff;
+}
+.search-result ul {
+  margin: 0;
+}

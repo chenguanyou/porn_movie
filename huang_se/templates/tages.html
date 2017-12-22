@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	{% include 'header.html' %}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>{{tages}}播放中...</title>
+	<link href="{% static 'css/video-js.css' %}" rel="stylesheet">
+	<style>
+		body{background-color: #191919}
+		.m{ width: 740px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 100px; }
+	</style>
+	<link href="{% static 'css2/bootstrap.min.css' %}"  type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css2/htmleaf-demo.css' %}">
+	<link href="{% static 'css2/jumbotron-narrow.css' %}" rel="stylesheet">
+</head>
+<body>
+			<div class="m">
+				<video id="my-video" class="video-js" controls preload="auto" width="740" height="400" data-setup="{}">
+				  <!--poster="m.png"--> data-setup="{}"-->
+					<source src="{{tagurl.urls}}" type="video/mp4">
+					<!--<p class="vjs-no-js">-->
+					  <!--&lt;!&ndash;To view this video please enable JavaScript, and consider upgrading to a web browser that&ndash;&gt;-->
+					  <!--&lt;!&ndash;<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>&ndash;&gt;-->
+					<!--</p>-->
+				  </video>
+				  <script src="{% static 'js/video.min.js' %}"></script>
+				  <script type="text/javascript">
+					var myPlayer = videojs('my-video');
+					videojs("my-video").ready(function(){
+						var myPlayer = this;
+						myPlayer.play();
+					});
+				</script>
+    </div>
+</body>
+</html>
