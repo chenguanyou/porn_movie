@@ -26,21 +26,21 @@ def view_setting(request):
         hstitle = paginator.page(1)
     # 以上分页功能
     TITLES = settings.TITLES
-    return locals()
+    return render(locals())
 
 #视频数据同步数据库需要单独调用运行
-def jin_ku():
-    #hs_list = []
-    print(os.getcwd())
-    open_file = open('./huangse/paurl/黄色小视频-未处理.txt', 'r')
-    du_file = eval(open_file.read())
-    open_file.close()
-    print(du_file[0])
-    for url in du_file:
-        huangse.objects.create(
-            titles = url['title'],
-            urls = url['url']
-        )
+# def jin_ku():
+#     #hs_list = []
+#     print(os.getcwd())
+#     open_file = open('./huangse/paurl/黄色小视频-未处理.txt', 'r')
+#     du_file = eval(open_file.read())
+#     open_file.close()
+#     print(du_file[0])
+#     for url in du_file:
+#         huangse.objects.create(
+#             titles = url['title'],
+#             urls = url['url']
+#         )
 
 #定义一个视频主页
 def index(request):
