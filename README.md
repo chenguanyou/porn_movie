@@ -31,6 +31,11 @@
 >
 >4.然后请阁下新建数据库```huangseDB```编码为```UTF-8```把```Django_fc_hs```目录下的```huangsedb.sql```文件导入数据库<br/>
 >
+>4.然后进入项目根目录执行:```python manage.py makemigrations```<br/>
+>
+>5.在执行：```python manage.py migrate```<br/>
+>
+<br/>
 
 
 ##4.运行
